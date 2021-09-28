@@ -10,6 +10,8 @@ namespace Parcels.Controllers
     public ActionResult Index(int width, int length, int height, int weight)
     {
       Parcel parcelToSend = new Parcel(width, length, height, weight);
+      parcelToSend.FindVolume();
+      parcelToSend.CostToShip(); 
       return View(parcelToSend);
     }
   }

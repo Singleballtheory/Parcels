@@ -8,6 +8,8 @@ namespace Parcels.Models
     public int Length { get; set; }
     public int Height { get; set; }
     public int Weight { get; set; }
+    public int Volume { get; set; }
+    public int Cost { get; set; }
 
     private static List<Parcel> _instances = new List<Parcel> {};
 
@@ -29,13 +31,13 @@ namespace Parcels.Models
     {
       _instances.Clear();
     }
-    public int FindVolume()
+    public void FindVolume()
     {
-      return (Width * Length * Height);
+      Volume = (Width * Length * Height);
     }
-    public int CostToShip(int Volume)
+    public void CostToShip()
     {
-      return (Volume * Weight);
+      Cost = (Volume * Weight);
     }
   }
 }
